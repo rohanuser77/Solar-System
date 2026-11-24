@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sound of Space — 3D Solar System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sound of Space - Interactive 3D Solar System and Cosmic Exploration Platform with real-time planetary audio sonification.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Title & Tagline -->
+  <header id="topBar">
+    <div id="label">SOUND OF SPACE</div>
+    <div id="subLabel">Explore the Universe &bull; Experience the Cosmos</div>
+  </header>
+
+  <!-- Cosmic Scale Hierarchy Navigation -->
+  <nav id="scaleNav" aria-label="Cosmic Hierarchy Scale Navigation">
+    <button class="scale-btn active" data-scale="solar" id="btnScaleSolar">Solar System</button>
+    <button class="scale-btn" data-scale="milkyway" id="btnScaleMilkyWay">Milky Way</button>
+    <button class="scale-btn" data-scale="andromeda" id="btnScaleAndromeda">Andromeda</button>
+  </nav>
+
+  <!-- User Interaction Hint -->
+  <div id="hint">drag to rotate &bull; scroll to zoom &bull; click planets, moons, Sagittarius A*, or galaxies</div>
+
+  <!-- Dynamic Hover Tooltip -->
+  <div id="hoverTooltip">
+    <span class="dot" id="hoverDot"></span>
+    <span id="hoverText">Earth</span>
+  </div>
+
+  <!-- Bottom Floating Control Deck -->
+  <nav id="controls" aria-label="Simulation Controls">
+    <button id="playPause" class="ctrl-btn" title="Play / Pause Orbital Motion" aria-label="Play or Pause Simulation">⏸</button>
+    <div id="speedRow">
+      <span>Speed</span>
+      <input id="speedSlider" type="range" min="0" max="4" step="0.1" value="1" title="Simulation Speed Multiplier">
+    </div>
+    <div class="ctrl-sep"></div>
+    <button id="ambientToggleBtn" title="Toggle Generative Ambient Cosmic Audio">
+      <span class="audio-pulse"></span>
+      <span id="ambientText">Space Audio</span>
+    </button>
+    <button id="resetViewBtn" class="ctrl-btn" title="Reset View to Overview" aria-label="Reset Camera View">⟲</button>
+  </nav>
+
+  <!-- Redesigned Scientific Information Dossier Panel -->
+  <aside id="infoPanel" role="region" aria-label="Celestial Body Dossier">
+    <div class="info-header">
+      <div class="info-badge-row">
+        <span class="info-tag" id="infoTag">Planet</span>
+      </div>
+      <h2 id="infoName">—</h2>
+      <div id="infoSub">—</div>
+    </div>
+
+    <p id="infoDesc"></p>
+
+    <div class="facts-table">
+      <div class="fact-row">
+        <span class="fact-label">Diameter</span>
+        <span class="fact-val" id="infoDiameter">—</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Distance from Sun</span>
+        <span class="fact-val" id="infoDistance">—</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Day length</span>
+        <span class="fact-val" id="infoDay">—</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Orbital period</span>
+        <span class="fact-val" id="infoYear">—</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Surface gravity</span>
+        <span class="fact-val" id="infoGravity">—</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Temperature</span>
+        <span class="fact-val" id="infoTemp">—</span>
+      </div>
+    </div>
+
+    <!-- Scientific Sonification Player Box -->
+    <div class="sonification-box">
+      <button class="sonify-play-btn" id="btnSonifyPlay" aria-label="Audition Scientific Sonification">
+        <svg id="sonifyIcon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </button>
+      <div class="sonify-text">
+        <span class="sonify-title" id="sonifyTitle">Scientific Sonification</span>
+        <span class="sonify-sub" id="sonifySub">Click to Audition Planetary Data</span>
+      </div>
+    </div>
+
+    <div class="btnRow">
+      <button id="backBtn">↩ Back</button>
+      <button id="backToSun" style="display:none;">↩ Back to Sun</button>
+      <button id="closeInfo">✕ Close</button>
+    </div>
+  </aside>
+
+  <!-- Primary 3D Space Canvas -->
+  <canvas id="spaceCanvas"></canvas>
+
+  <!-- Application Logic -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
