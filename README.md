@@ -64,7 +64,7 @@ Because the project is built as a native static website using standard ES module
    ```
 3. Open your browser and navigate to:
    ```
-   http://localhost:8080/index.html](https://solar-system-delta-three.vercel.app/
+   https://solar-system-delta-three.vercel.app
    
    ```
 
